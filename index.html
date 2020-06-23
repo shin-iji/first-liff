@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -44,39 +46,31 @@
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
   <script>
-    function createUniversalLink() {
-    }
+    function createUniversalLink() {}
 
-    async function shareMsg() {
-    }
+    async function shareMsg() {}
 
-    function logOut() {
-    }
+    function logOut() {}
 
-    function closed() {
-    }
+    function closed() {}
 
-    async function scanCode() {
-    }
+    async function scanCode() {}
 
-    function openWindow() {
-    }
+    function openWindow() {}
 
-    async function getFriendship() {
-    }
+    async function getFriendship() {}
 
-    async function sendMsg() {
-    }
+    async function sendMsg() {}
 
-    function getContext() {
-    }
+    function getContext() {}
 
     async function getUserProfile() {
       const profile = await liff.getProfile();
       document.getElementById('pictureUrl').src = profile.pictureUrl;
       document.getElementById('userId').append(profile.userId);
       document.getElementById('statusMessage').append(profile.statusMessage);
-      document.getElementById('displayName').src = profile.displayName;
+      document.getElementById('displayName').append(profile.displayName);
+      document.getElementById('decodedIDToken').append(liff.getDecodedIDToken().email);
     }
 
     function getEnvironment() {
@@ -95,7 +89,9 @@
     }
 
     async function main() {
-      await liff.init({ liffId: "1654378227-QwAzgAb0" })
+      await liff.init({
+        liffId: "1654378227-QwAzgAb0"
+      })
       getEnvironment();
       getUserProfile()
       // getContext()
@@ -105,4 +101,5 @@
     main()
   </script>
 </body>
+
 </html>
